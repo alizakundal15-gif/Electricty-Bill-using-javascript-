@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricity Bill Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      <div class="header">
+        <div class="icon" aria-hidden="true">⚡</div>
+        <h1>Electricity Bill Calculator</h1>
+        <p>Calculate your electricity charges based on units consumed.</p>
+      </div>
+
+      <form id="billForm">
+        <label for="units">Electricity units consumed</label>
+        <input type="number" id="units" name="units" min="0" step="any"
+               placeholder="Enter units (e.g. 200)" required>
+        <button type="submit">Calculate Bill</button>
+      </form>
+
+      <div id="error" class="error" role="alert" hidden></div>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <h2>Your Bill Summary</h2>
+        <p class="total-label">Total electricity charges</p>
+        <p id="total" class="total">₹0.00</p>
+        <div id="breakdown"></div>
+        <p class="note">Note: Taxes, fixed charges, and other fees are not included.</p>
+      </section>
+
+      <section class="tariffs">
+        <h2>Tariff Rates</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Unit slab</th><th>Rate per unit</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>First 50 units</td><td>₹3.50</td></tr>
+              <tr><td>Next 100 units (51–150)</td><td>₹4.00</td></tr>
+              <tr><td>Next 100 units (151–250)</td><td>₹5.20</td></tr>
+              <tr><td>Above 250 units</td><td>₹6.50</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+    <footer>Electricity Bill Calculator • JavaScript Project</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
